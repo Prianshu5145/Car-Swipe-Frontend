@@ -134,7 +134,7 @@ const ContactUs = () => {
                 <span>
                   Phone:{' '}
                   <a href="tel:+919792983625" className="text-blue-600 hover:underline">
-                    +91 97929 83625
+                    +919119913441
                   </a>
                 </span>
               </div>
