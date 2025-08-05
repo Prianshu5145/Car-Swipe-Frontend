@@ -10,7 +10,7 @@ const actions = [
   {
     title: 'Buy Car',
     icon: 'https://res.cloudinary.com/dztz5ltuq/image/upload/v1750064596/give_gifts_09-removebg-preview_kz31pc.png',
-    link: '/buy-car',
+    link: '/buy',
   },
   {
     title: 'Car Loan',
