@@ -30,7 +30,7 @@ const [loading, setLoading] = useState(false);
 
       if (response.ok) {
         setMessage(result.message || 'User signed up successfully!');
-        setTimeout(() => navigate('/login'), 2000); // Redirect to login
+        setTimeout(() => navigate('/login'), 4000); // Redirect to login
       } else {
         setMessage(result.message || 'Error signing up');
       }
@@ -131,39 +131,34 @@ const [loading, setLoading] = useState(false);
         </select>
       </div>
 
-      <button
-        type="submit"
-        className="w-full p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition mt-5"
-      >
-        {loading ? (
-          <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-50 z-50">
-            {/* Spinner and Text Container */}
-            <div className="flex flex-col items-center">
-              {/* Outer Circle with Gradient */}
-              <div className="relative w-28 h-28 mb-4">
-                <div className="absolute w-full h-full border-4 border-t-transparent border-b-transparent border-l-blue-500 border-r-blue-300 rounded-full animate-spin"></div>
+      {loading ? (
+  <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white">
+    {/* Car Animation */}
+    <div className="w-28 h-16 flex items-center justify-center mb-4">
+      <img
+        src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
+        alt="Car Logo"
+        className="w-36 h-16 animate-carDrive"
+      />
+    </div>
 
-                {/* Inner Circle */}
-                <div className="absolute top-2 left-2 w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center">
-                  {/* Logo with Flip Animation */}
-                  <img
-                    src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1731448689/apple-touch-icon_jrhfll.png" // Replace with your car logo path
-                    alt="Car Logo"
-                    className="w-12 h-12 animate-flip"
-                  />
-                </div>
-              </div>
+    {/* Loading Text */}
+    <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
+      Creating Your{' '}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+        Account...
+      </span>
+    </p>
+  </div>
+) : (
+  <button
+    type="submit"
+    className="w-full p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition mt-5"
+  >
+    Sign Up
+  </button>
+)}
 
-              {/* Text Below the Spinner */}
-              <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
-                <strong> PLEASE WAIT.... </strong>
-              </p>
-            </div>
-          </div>
-        ) : (
-          'Sign Up'
-        )}
-      </button>
     </form>
 
     
