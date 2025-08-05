@@ -48,87 +48,81 @@ const [loading, setLoading] = useState(false);
 
   return (
     <div>
-      <Navbar />
-      <div className="relative bg-cover bg-center min-h-screen flex justify-center items-center opacity-90">
-        {/* Background Image for Mobile */}
-        <div className="absolute inset-0 bg-loginSignup-mobile lg:hidden opacity-30" />
-        {/* Background Image for Laptop */}
-        <div className="absolute inset-0 hidden lg:block bg-loginSignup-desktop opacity-30" />
+  <Navbar />
 
-        <form className="bg-white bg-opacity-80 shadow-lg rounded-lg p-8 w-full max-w-md mx-auto relative z-10 border border-gray-300" onSubmit={handleSubmit}>
-          <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
+  <div className="relative bg-cover bg-center min-h-screen flex justify-center items-center">
+    {/* Background Image Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-tr from-blue-800 via-purple-900 to-black opacity-70 z-0" />
+    <div className="absolute inset-0 bg-loginSignup-mobile lg:hidden bg-cover bg-center opacity-30" />
+    <div className="absolute inset-0 hidden lg:block bg-loginSignup-desktop bg-cover bg-center opacity-30" />
 
-          {/* Display Backend Error or Success Message */}
-          {error && <p className="text-red-500 text-center">{error}</p>}
-          {message && <p className="text-green-500 text-center">{message}</p>}
+    {/* Login Card */}
+    <form
+      onSubmit={handleSubmit}
+      className="relative z-10 bg-white/80 backdrop-blur-lg shadow-2xl rounded-xl px-8 py-10 w-full max-w-md border border-gray-200"
+    >
+      <h2 className="text-3xl font-bold text-center text-blue-800 mb-6 tracking-wide">
+        Welcome Back
+      </h2>
 
-          <div className="mb-4">
-            <label className="block text-sm font-medium mb-1">Email <span className="text-red-500">*</span></label>
-            <input
-              type="email"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your Registered Email"
-              required
-            />
-          </div>
+      {error && <p className="text-red-600 text-center font-medium mb-2">{error}</p>}
+      {message && <p className="text-green-600 text-center font-medium mb-2">{message}</p>}
 
-          <div className="mb-4">
-            <label className="block text-sm font-medium mb-1">Password <span className="text-red-500">*</span></label>
-            <input
-              type="password"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your Password"
-              required
-            />
-          </div>
-
-          <button
-        type="submit"
-        className="w-full p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition mt-5"
-      >
-        {loading ? (
-          <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-50 z-50">
-            {/* Spinner and Text Container */}
-            <div className="flex flex-col items-center">
-              {/* Outer Circle with Gradient */}
-              <div className="relative w-28 h-28 mb-4">
-                <div className="absolute w-full h-full border-4 border-t-transparent border-b-transparent border-l-blue-500 border-r-blue-300 rounded-full animate-spin"></div>
-
-                {/* Inner Circle */}
-                <div className="absolute top-2 left-2 w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center">
-                  {/* Logo with Flip Animation */}
-                  <img
-                    src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1731448689/apple-touch-icon_jrhfll.png" // Replace with your car logo path
-                    alt="Car Logo"
-                    className="w-12 h-12 animate-flip"
-                  />
-                </div>
-              </div>
-
-              {/* Text Below the Spinner */}
-              <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
-                <strong> PLEASE WAIT.... </strong>
-              </p>
-            </div>
-          </div>
-        ) : (
-          'Login'
-        )}
-      </button>
-
-          <p className="mt-4 text-center">
-            Don't have an account? <a href="/signup" className="text-blue-500 hover:underline">Sign up</a>
-          </p>
-          <p className="text-center">
-            Forgot your password? <a href="/forgot-Password" className="text-blue-500 hover:underline">Reset Password</a>
-          </p>
-        </form>
+      {/* Email Field */}
+      <div className="mb-4">
+        <label className="block text-sm font-medium mb-1 text-gray-700">
+          Email <span className="text-red-500">*</span>
+        </label>
+        <input
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter your registered email"
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
       </div>
-    </div>
+
+      {/* Password Field */}
+      <div className="mb-4">
+        <label className="block text-sm font-medium mb-1 text-gray-700">
+          Password <span className="text-red-500">*</span>
+        </label>
+        <input
+          type="password"
+          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter your password"
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      {/* Submit Button */}
+      <button
+  type="submit"
+  className="w-full py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg font-semibold hover:from-blue-600 hover:to-indigo-700 transition duration-300"
+>
+  {loading ? 'Logging You In...' : 'Log In'}
+</button>
+
+      {/* Bottom Links */}
+      <p className="mt-5 text-center text-md text-gray-700">
+        Don’t have an account?{' '}
+        <a href="/signup" className="text-blue-600 hover:underline font-medium">
+          Sign up
+        </a>
+      </p>
+      <p className="text-center text-md text-gray-700">
+        Forgot password?{' '}
+        <a href="/forgot-Password" className="text-blue-600 hover:underline font-medium">
+          Reset it
+        </a>
+      </p>
+    </form>
+  </div>
+</div>
+
   );
 };
 

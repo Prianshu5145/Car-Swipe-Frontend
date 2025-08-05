@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'loginSignup-mobile': "url('https://res.cloudinary.com/dztz5ltuq/image/upload/v1731529280/WhatsApp_Image_2024-11-14_at_01.49.22_9998f31d_mkgycc.jpg')",
-        'loginSignup-desktop': "url('https://res.cloudinary.com/dztz5ltuq/image/upload/v1730327577/Designer_14_rjoyyr.jpg')",
+        'loginSignup-mobile': "url('https://res.cloudinary.com/dztz5ltuq/image/upload/v1754420866/pexels-albinberlin-919073_btwdos.jpg')",
+        'loginSignup-desktop': "url('https://res.cloudinary.com/dztz5ltuq/image/upload/v1754420866/pexels-albinberlin-919073_btwdos.jpg')",
       },
       screens: {
         'sm': '640px',

@@ -204,24 +204,24 @@ const handleSubmit1 = async (e) => {
         className="w-full p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
       >
         {loading ? (
-          <div className="flex flex-col items-center justify-center h-screen bg-white">
-  {/* Car Animation Container */}
-  <div className="relative w-28 h-28 flex items-center justify-center">
-    {/* Moving Car Icon */}
-    <img
-      src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
-      alt="Car Logo"
-      className="w-36 h-16 animate-carDrive"
-    />
-  </div>
+           <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white">
+    {/* Car Animation */}
+    <div className="w-28 h-16 flex items-center justify-center mb-4">
+      <img
+        src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
+        alt="Car Logo"
+        className="w-36 h-16 animate-carDrive"
+      />
+    </div>
 
-  {/* Text Section */}
-  <p className="mt-0 text-xl md:text-2xl font-bold text-gray-800 text-center">
-  Getting the vehicles details Please Wait ...
-   
-  </p>
- 
-</div>
+    {/* Loading Text */}
+    <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
+      Getting the {' '}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+        vehicles Details.....
+      </span>
+    </p>
+  </div>
         ) : (
           'Next'
         )}
@@ -625,24 +625,24 @@ const handleSubmit1 = async (e) => {
         className="w-full p-3 mt-5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
       >
         {loading ? (
-          <div className="flex flex-col items-center justify-center h-screen bg-white">
-  {/* Car Animation Container */}
-  <div className="relative w-28 h-28 flex items-center justify-center">
-    {/* Moving Car Icon */}
-    <img
-      src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
-      alt="Car Logo"
-      className="w-36 h-16 animate-carDrive"
-    />
-  </div>
+         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white">
+    {/* Car Animation */}
+    <div className="w-28 h-16 flex items-center justify-center mb-4">
+      <img
+        src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
+        alt="Car Logo"
+        className="w-36 h-16 animate-carDrive"
+      />
+    </div>
 
-  {/* Text Section */}
-  <p className="mt-0 text-xl md:text-2xl font-bold text-gray-800 text-center">
-   Purchase Deal Form is submitting Please Wait ...
-   
-  </p>
- 
-</div>
+    {/* Loading Text */}
+    <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
+      Purchase Deal Form{' '}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+        is Submitting......
+      </span>
+    </p>
+  </div>
         ) : (
           'Submit Purchase Deal Form'
         )}

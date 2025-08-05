@@ -14,7 +14,7 @@ const AuthorityLetterGenerator = () => {
     });
 
     const pageWidth = 210;
-    const logoUrl = 'https://res.cloudinary.com/dunsl7vvf/image/upload/v1752448214/Screenshot_623_hfjv8d.png';
+    const logoUrl = 'https://res.cloudinary.com/dztz5ltuq/image/upload/v1754423233/QZim6kCLMB3XSpZ7-5371732941973365_1_15__cropped_page-0001_e4t9ee.jpg';
     const logoBase64 = await loadImageAsBase64(logoUrl);
 
     const imgHeight = 35;

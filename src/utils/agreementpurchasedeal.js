@@ -101,7 +101,7 @@ CashAmount,
     const imgWidth = 210; // A4 width in mm
     const imgHeight = 50;
     doc.addImage(
-        'https://res.cloudinary.com/dunsl7vvf/image/upload/v1752448214/Screenshot_623_hfjv8d.png',
+        'https://res.cloudinary.com/dztz5ltuq/image/upload/v1754423233/QZim6kCLMB3XSpZ7-5371732941973365_1_15__cropped_page-0001_e4t9ee.jpg',
         'PNG',
         0,
         0,
@@ -111,7 +111,7 @@ CashAmount,
 
     // Full-width line
     const pageWidth = doc.internal.pageSize.getWidth();
-    doc.line(0, 50, pageWidth, 50);
+    doc.line(0, 51, pageWidth, 51);
 
     // Set font to bold for REF and Date
     doc.setFont('helvetica', 'bold');
@@ -170,7 +170,7 @@ CashAmount,
         ['INVOICE FOR CAR PURCHASE'], // Row 1
         [
             `Customer Name:\n ${customerName}\nCustomer Permanent Address: ${Vehicledata.permanent_address} \nMobile No: ${whatsappMobile}`,
-            `INVOICE No : DP${tokenCount}/2025-26\nBank Details For Payment\nBank Name: Bandhan Bank\nAccount Name: Car Swipe Service Pvt Ltd. \nAccount Number: 20100019064564\nIFSC Code: BDBL0002480\nBranch: Akbarpur Branch`,
+            `INVOICE No : DP${tokenCount}/2025-26\nBank Details For Payment\nBank Name: Bandhan Bank\nAccount Number: 20100019064564\nIFSC Code: BDBL0002480\nBranch: Akbarpur Branch`,
         ], // Row 2
         ['S.No', ' Particulars', 'REGISTRATION NO.', 'Amount', 'Remarks'], // Row 3
         ['1.\n\n\n2.', `Offered Deal Price of — ${carTitle} (A)\n\nDeductions — Challans (B)`, `${Vehicledata.rc_number}\n\n\n${Vehicledata.rc_number}`, `Rs. ${dealDoneAmount}\n\n\n Rs. ${challanAmount}`,  `\n\n\nExisting challan on your vehicle that Car Swipe will pay`], // Row 4
@@ -405,14 +405,14 @@ doc.text(`2. If the responsibility for loan closure lies with the customer, it i
    const imgWidth2 = 210; // A4 width in mm
     const imgHeight2 = 50;
     doc.addImage(
-        'https://res.cloudinary.com/dunsl7vvf/image/upload/v1752448214/Screenshot_623_hfjv8d.png',
+        'https://res.cloudinary.com/dztz5ltuq/image/upload/v1754423233/QZim6kCLMB3XSpZ7-5371732941973365_1_15__cropped_page-0001_e4t9ee.jpg',
         'PNG',
         0,
         0,
         imgWidth2,
         imgHeight2
     );
-    doc.line(0, 50, pageWidth, 50);
+    doc.line(0, 51, pageWidth, 51);
 
     doc.setFontSize(14);
     doc.text('REF......', 8, 64);
@@ -549,21 +549,21 @@ doc.text(`2. If the responsibility for loan closure lies with the customer, it i
    doc.setFont("helvetica", "normal");
    doc.setFontSize(10);
    doc.setTextColor(100, 149, 237); // Light blue color
-   doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://www.carswipe.in/ or email at support@carswipe.in.', 4, 320);
+   doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://carswipe.in/ or email at support@carswipe.in.', 4, 320);
    
    
    // #rd Page
    doc.addPage([210, 337]);
    
     doc.addImage(
-        'https://res.cloudinary.com/dunsl7vvf/image/upload/v1752448214/Screenshot_623_hfjv8d.png',
+        'https://res.cloudinary.com/dztz5ltuq/image/upload/v1754423233/QZim6kCLMB3XSpZ7-5371732941973365_1_15__cropped_page-0001_e4t9ee.jpg',
         'PNG',
         0,
         0,
         imgWidth2,
         imgHeight2
     );
-    doc.line(0, 50, pageWidth, 50);
+    doc.line(0, 51, pageWidth, 51);
     doc.setTextColor(139, 0, 0); // Dark Red - bold and authoritative
 
 
@@ -614,7 +614,7 @@ doc.text(`4. Car Swipe is not aware of any such issue through the  email – sup
 
 doc.setFontSize(10);
 doc.setTextColor(100, 149, 237); // Light blue color
-doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://www.carswipe.in/ or email at support@carswipe.in.', 4, 332);
+doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://carswipe.in/ or email at support@carswipe.in.', 4, 332);
 doc.setTextColor(0, 0, 0); // RGB for black
 doc.setFontSize(10);
 // doc.text(`Authorised Signatory`, pageWidth - 40, 320);
@@ -649,14 +649,14 @@ doc.text(` ACKNOWLEDGED & ACCEPTED`,4,288)
    doc.addPage([210, 296]);
    
     doc.addImage(
-        'https://res.cloudinary.com/dunsl7vvf/image/upload/v1752448214/Screenshot_623_hfjv8d.png',
+        'https://res.cloudinary.com/dztz5ltuq/image/upload/v1754423233/QZim6kCLMB3XSpZ7-5371732941973365_1_15__cropped_page-0001_e4t9ee.jpg',
         'PNG',
         0,
         0,
         imgWidth2,
         imgHeight2
     );
-    doc.line(0, 50, pageWidth, 50);
+    doc.line(0, 51, pageWidth, 51);
     doc.setTextColor(139, 0, 0); // Dark Red - bold and authoritative
 
 
@@ -701,21 +701,21 @@ doc.text(`Note: This is an electronically generated letter.and do not require a 
 // );
 doc.setFontSize(10);
 doc.setTextColor(100, 149, 237); // Light blue color
-doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://www.carswipe.in/ or email at support@carswipe.in.', 4, 291);
+doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://carswipe.in/ or email at support@carswipe.in.', 4, 291);
    
    
    //5th page
 doc.addPage([210, 296]);
    
 doc.addImage(
-    'https://res.cloudinary.com/dunsl7vvf/image/upload/v1752448214/Screenshot_623_hfjv8d.png',
+    'https://res.cloudinary.com/dztz5ltuq/image/upload/v1754423233/QZim6kCLMB3XSpZ7-5371732941973365_1_15__cropped_page-0001_e4t9ee.jpg',
     'PNG',
     0,
     0,
     imgWidth2,
     imgHeight2
 );
-doc.line(0, 50, pageWidth, 50);
+doc.line(0, 51, pageWidth, 51);
 doc.setTextColor(139, 0, 0); // Dark Red - bold and authoritative
 
 
@@ -853,7 +853,7 @@ doc.text(`Note: This is an electronically generated letter.and do not require a 
 // );
 doc.setFontSize(10);
 doc.setTextColor(100, 149, 237); // Light blue color
-doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://www.carswipe.in/ or email at support@carswipe.in.', 4, 291);
+doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://carswipe.in/ or email at support@carswipe.in.', 4, 291);
    
    
    
@@ -861,14 +861,14 @@ doc.text('This is a system-generated Document, e-signed and approved for authent
    doc.addPage([210, 373]);
    
 doc.addImage(
-    'https://res.cloudinary.com/dunsl7vvf/image/upload/v1752448214/Screenshot_623_hfjv8d.png',
+    'https://res.cloudinary.com/dztz5ltuq/image/upload/v1754423233/QZim6kCLMB3XSpZ7-5371732941973365_1_15__cropped_page-0001_e4t9ee.jpg',
     'PNG',
     0,
     0,
     imgWidth2,
     imgHeight2
 );
-doc.line(0, 50, pageWidth, 50);
+doc.line(0, 51, pageWidth, 51);
 doc.setTextColor(139, 0, 0); // Dark Red - bold and authoritative
 
 
@@ -883,7 +883,7 @@ doc.text(`Date: ${indianDate}`, pageWidth - 39, 64);
    
 doc.setFont('helvetica', 'NORMAL');
 doc.setFontSize(10);
-doc.text(`1. Car Swipe Services Pvt Ltd. is a  registered company with CIN No. U45102UP2025PTC225693 Under Government of India. The Customer/Authorized Representative (AR) has approached and represented to Car Swipe with an intent to sell his/her vehicle. “Customer” will represent the customer or his/her Authorized Representative in all communications herewith.`,4,75,{ maxWidth: 205 })
+doc.text(`1. Car Swipe Services Pvt. Ltd. is a company registered under the Companies Act, Government of India, with Corporate Identification Number (CIN): U45102UP2025PTC225693. The Customer/Authorized Representative (AR) has approached and represented to Car Swipe with an intent to sell his/her vehicle. “Customer” will represent the customer or his/her Authorized Representative in all communications herewith.`,4,75,{ maxWidth: 205 })
    doc.text(`2. The transaction cannot be cancelled once the Delivery Payment is made to the customer’s bank account. However, if the Customer prefers to cancel the transaction before the release of delivery payment, then he/she shall be liable to immediately refund the Token amount along with any charges incurred/levied by Car Swipe. In case of cancellation, Car Swipe shall possess all rights to retain the original documents submitted by the Customer till such full amount is received by Car Swipe and, in default, initiate appropriate legal action, if required.`,4,90,{ maxWidth: 205 })
    doc.text(`3. As per the new government guidelines, any diesel car that is more than 9 years 6 months old and any petrol car that is more than 14 years 6 months old will be considered as a scrap car in the Delhi-NCR region. For such vehicles, Car Swipe will be unable to provide any assurances on the transfer of RC. Moreover, for these vehicles, Car Swipe will not be liable for any damages (to the car or third-party vehicle or property) in any manner.`,4,110,{maxWidth:205})
    doc.setFont('helvetica', 'bold');
@@ -942,7 +942,7 @@ doc.text(`Note: This is an electronically generated letter.and do not require a 
 // );
 doc.setFontSize(10);
 doc.setTextColor(100, 149, 237); // Light blue color
-doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://www.carswipe.in/ or email at support@carswipe.in.', 4, 292);
+doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://carswipe.in/ or email at support@carswipe.in.', 4, 292);
   
 
 
@@ -951,7 +951,7 @@ doc.text('This is a system-generated Document, e-signed and approved for authent
 //  var blobUrl = doc.output('bloburl');
   
 // window.open(blobUrl, '_blank');
-  // doc.save();
+   doc.save();
  const pdfBlob = doc.output("blob");
 return new File([pdfBlob], "PaymentDetails_Agreement.pdf", { type: "application/pdf" });
 };
