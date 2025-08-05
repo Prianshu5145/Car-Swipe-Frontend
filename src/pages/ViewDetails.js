@@ -21,7 +21,7 @@ const ViewDetails = () => {
     useEffect(() => {
         const fetchListing = async () => {
             try {
-                const response = await axios.get(`https://trustnride-backend.onrender.com/api/listings/find/${listingId}`);
+                const response = await axios.get(`https://car-swipe-backend-production.up.railway.app/api/listings/find/${listingId}`);
                 setListing(response.data);
 
                 // Extract tire images from the listing data
@@ -33,7 +33,7 @@ const ViewDetails = () => {
                 console.error('Error fetching listing:', error);
             }
             finally {
-                setIsLoading(false); // Stop spinner after fetching
+                setIsLoading(false)
               }
         };
 
@@ -83,30 +83,26 @@ const ViewDetails = () => {
        <div className="container mx-auto px-4 py-1">
        {isLoading ? (
           <div className="flex flex-col items-center justify-center h-screen bg-white">
-  {/* Spinner Container */}
-  <div className="relative w-28 h-28">
-    {/* Outer Circle with Gradient */}
-    <div className="absolute w-full h-full border-4 border-t-transparent border-b-transparent border-l-blue-500 border-r-blue-300 rounded-full animate-spin"></div>
-    
-    {/* Inner Circle */}
-    <div className="absolute top-2 left-2 w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center">
-      {/* Logo with Flip Animation */}
-      <img
-        src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1731448689/apple-touch-icon_jrhfll.png" // Replace with your car logo path
-        alt="Car Logo"
-        className="w-12 h-12 animate-flip"
-      />
-    </div>
+  {/* Car Animation Container */}
+  <div className="relative w-28 h-28 flex items-center justify-center">
+    {/* Moving Car Icon */}
+    <img
+      src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
+      alt="Car Logo"
+      className="w-36 h-16 animate-carDrive"
+    />
   </div>
 
   {/* Text Section */}
-  <p className="mt-6 text-sm lg:text-md font-semibold text-gray-500">
-  <p className="mt-8 text-xl md:text-2xl font-bold text-gray-800 text-center">
-    We’re preparing for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">your dream ride....</span>
+  <p className="mt-0 text-xl md:text-2xl font-bold text-gray-800 text-center">
+   Getting your dream {' '}
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+     ride ready...
+    </span>
   </p>
-  Your journey, our commitment —  <span className="text-blue-400">TRUST N RIDE</span>
-  </p>
+ 
 </div>
+
 
         ) :
 
@@ -187,19 +183,34 @@ const ViewDetails = () => {
 <div className="flex items-center justify-center  bg-white">
 <div className="bg-white  mt-4 rounded-lg mb-0"> {/* Adjusted to remove inline-flex */}
    <Link
-       to={{
-           pathname: '/Make a Deal',
-       }}
-       state={{ 
-           title: listing.title, 
-           price: listing.price, 
-           FairMarketValue: listing.FairMarketValue, 
-           Carid: listingId 
-       }}
-       className="bg-green-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-600 transition-all duration-300 font-semibold text-lg"
-   >
-       Make a Deal/Contact Us
-   </Link>
+  to={{
+    pathname: '/Make a Deal',
+  }}
+  state={{ 
+    title: listing.title, 
+    price: listing.price, 
+    FairMarketValue: listing.FairMarketValue, 
+    Carid: listingId 
+  }}
+  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-base font-semibold rounded-full shadow-md hover:from-green-600 hover:to-emerald-700 hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-5 h-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M8 10h.01M12 10h.01M16 10h.01M9 16h6m2 4H7a2 2 0 01-2-2V6a2 2 0 012-2h4l2 2h5a2 2 0 012 2v10a2 2 0 01-2 2z"
+    />
+  </svg>
+  Make a Deal
+</Link>
+
 </div>
 </div>
 
@@ -299,7 +310,7 @@ const ViewDetails = () => {
 
 
                    {/* Additional Sections */}
-                   <h4 className="mt-8 text-2xl font-semibold text-gray-800 relative pb-4">
+                   {/* <h4 className="mt-8 text-2xl font-semibold text-gray-800 relative pb-4">
 Exterior
 <span 
    className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-green-500 to-purple-500"
@@ -329,7 +340,7 @@ Exterior
        </div>
    ))}
 </div>
-</div>
+</div> */}
 
                     {/* Engine Section */}
                     <h4 className="mt-8 text-2xl font-semibold text-gray-800 relative pb-4">

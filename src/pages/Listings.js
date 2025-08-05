@@ -16,8 +16,8 @@ const Listings = () => {
     useEffect(() => {
         const fetchListings = async () => {
             try {
-                const response = await axios.get('https://trustnride-backend.onrender.com/api/listings/alllisting');
-                setListings(response.data.slice(8, 23)); // Limit to first 15 listings only
+                const response = await axios.get('https://car-swipe-backend-production.up.railway.app/api/listings/alllisting');
+                setListings(response.data.slice(0, 15)); // Limit to first 15 listings only
             } catch (error) {
                 console.error('Error fetching listings:', error);
             }
@@ -53,7 +53,7 @@ const Listings = () => {
 
     return (
         <div className=" border-t border-gray-200  container mx-auto px-4 py-1 border-b-2 mb-8">
-            <h2 className="text-3xl font-extrabold mb-8 text-center text-gray-800">Ultimate Car Picks</h2>
+            <h2 className="text-3xl font-extrabold mb-8 text-center text-gray-800">Trending Car Picks</h2>
 
             {listings.length > 0 && (
                 <>
@@ -149,12 +149,15 @@ const Listings = () => {
                                             <div className="w-24 h-24 bg-blue-500 opacity-20 blur-xl rounded-full"></div>
                                         </div>
 
-                                        <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-                                            <span className="text-lg lg:text-xl font-semibold text-blue-600 mb-2">
-                                                View All Listings
-                                            </span>
-                                            <span className="text-4xl">→</span>
-                                        </div>
+                                        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 bg-white/70 backdrop-blur-md rounded-xl shadow-lg hover:scale-105 transition-transform cursor-pointer group">
+  <span className="text-base lg:text-lg font-medium text-gray-700 group-hover:text-blue-700 mb-1 tracking-wide">
+    Explore All Cars
+  </span>
+  <span className="text-3xl text-blue-600 group-hover:translate-x-1 transition-transform">
+    →
+  </span>
+</div>
+
 
                                         <div className="absolute inset-0 bg-white opacity-0 hover:opacity-10 transition-opacity duration-300"></div>
                                     </div>
@@ -169,7 +172,7 @@ const Listings = () => {
                             onClick={handleViewAll} 
                             className="bg-blue-600 text-white text-xs font-bold px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
                         >
-                            View All Cars
+                           Explore All Cars
                         </button>
                     </div>
                 </>

@@ -20,21 +20,45 @@ const Navbar = () => {
     <nav className="bg-white p-1 flex justify-between items-center z-50 relative border-t-1 border-b border-gray-300 shadow-sm">
   {/* Logo */}
   <Link to="/" className="text-lg font-bold">
-    <img src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1730227384/IMG-20241023-WA0010_p7ukjb.jpg" alt="Trust N Ride Logo" className="h-12 w-auto" />
+    <img src="https://res.cloudinary.com/dunsl7vvf/image/upload/v1754049451/Car_Swipe_Logo_with_Darker_Blue_Elements_12_zenwqo.png" alt="Car Swipe" className="h-12 w-32" />
   </Link>
-  <Link to="/contact" className="flex items-center p-0 text-black text-lg hover:underline hover:text-blue-600 transition duration-300">
-  <FaEnvelope className="mr-2 h-5 w-5" /> {/* Icon with spacing */}
+  <Link
+  to="/contact"
+  className="inline-flex items-center px-3 py-1 text-white text-base font-semibold bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-md hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+>
+  <FaEnvelope className="mr-2 h-3 w-3" />
   Contact Us
 </Link>
 
+
       {/* Desktop Menu */}
       <div className="hidden md:flex space-x-10 text-black">
-        <Link to="/gallery" className="hover:text-gray-400">Gallery</Link>
-        <Link to="/buy" className="hover:text-gray-400">Buy a Car</Link>
-        <Link to="/sell" className="hover:text-gray-400">Sell a Car</Link>
+       
+      
+          <Link
+  to="/buy"
+  className="inline-flex items-center px-3 py-1 text-white text-base font-semibold bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-md hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+>
+  
+  Buy a Car
+</Link>
+       
+          <Link
+  to="/sell"
+  className="inline-flex items-center px-3 py-1 text-white text-base font-semibold bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-md hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+>
+  
+  Sell a Car
+</Link>
 
         {!isLoggedIn ? (
-          <Link to="/login" className="hover:text-gray-400">Sign In/Register</Link>
+          <Link
+  to="/login"
+  className="inline-flex items-center px-3 py-1 text-white text-base font-semibold bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-md hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+>
+  
+  Login In/ Sign Up
+</Link>
         ) : (
           <div className="relative group">
             <FaUser className="cursor-pointer" />
@@ -49,19 +73,19 @@ const Navbar = () => {
                      </>     )}
               {role === 'Employee' && (
                 <>
-                <Link to="/dummytoken" className="block px-4 py-2 hover:bg-gray-600">Dummy Token</Link>
+                {/* <Link to="/dummytoken" className="block px-4 py-2 hover:bg-gray-600">Dummy Token</Link> */}
                 <Link to="/create-listing" className="block px-4 py-2 hover:bg-gray-600">Create Listing</Link>
                  
                   <Link to="/purchasetoken" className="block px-4 py-2 hover:bg-gray-600">Purchase Token Invoice</Link>
                   <Link to="/purchaseDeal" className="block px-4 py-2 hover:bg-gray-600">Purchase Deal Invoice</Link>
                   <Link to="/Selltoken" className="block px-4 py-2 hover:bg-gray-600">Sell Token Invoice</Link>
                   <Link to="/SellDeal" className="block px-4 py-2 hover:bg-gray-600">Sell Deal Invoice</Link>
-                  <Link to="/rtodoc" className="block px-4 py-2 hover:bg-gray-600">Dispatch RTO DOC</Link>
+                  {/* <Link to="/rtodoc" className="block px-4 py-2 hover:bg-gray-600">Dispatch RTO DOC</Link>
                   <Link to="/viewnoc" className="block px-4 py-2 hover:bg-gray-600">View RTO DOC</Link>
                   <Link to="/my-listings" className="block px-4 py-2 hover:bg-gray-600">My Listings</Link>
                   <Link to="/my-listings" className="block px-4 py-2 hover:bg-gray-600">Update Your Listing</Link>
                   <Link to="/my-listings" className="block px-4 py-2 hover:bg-gray-600">Delete Your Listing</Link>
-                 
+                  */}
                  
                 </>
               )}
@@ -84,7 +108,13 @@ const Navbar = () => {
       <div className="md:hidden">
   {!isLoggedIn ? (
 
-    <Link to="/login" className="text-black text-lg">Sign In</Link>
+   <Link
+  to="/login"
+  className="inline-flex items-center px-2 py-1 text-white text-base font-semibold bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-md hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+>
+ LOGIN
+</Link>
+
 
   ) : (
     <button onClick={toggleMenu} className="text-black text-lg">

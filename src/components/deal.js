@@ -47,7 +47,7 @@ const [dealCount, setdealCount] = useState(null);
 const fetchdealCount = async () => {
     try {
       // Send a GET request to the API endpoint
-      const response = await fetch('https://trustnride-backend.onrender.com/api/deal/deal/count');
+      const response = await fetch('https://car-swipe-backend-production.up.railway.app/api/deal/deal/count');
   
       // Check if the response status is OK (200)
       if (response.ok) {
@@ -160,7 +160,7 @@ const fetchdealCount = async () => {
   
       // Submit form data to the backend
       const response = await axios.post(
-        'https://trustnride-backend.onrender.com/api/deal/create',
+        'https://car-swipe-backend-production.up.railway.app/api/deal/create',
         formDataToSend,
         {
           headers: {
@@ -255,7 +255,7 @@ const fetchdealCount = async () => {
         ['DELIVERY - INVOICE FOR PAYMENT RECEIVED'], // Row 1
         [
             `Customer Name:\n ${formData.customerName}\nCustomer Address: ${formData.customerAddress} \nMobile No: ${formData.customerWhatsappNumber}`,
-            `INVOICE No : DS${dealCount}/2025-26\nBank Details For Payment\nBank Name: Bandhan Bank\nAccount Name: TRUST N RIDE\nAccount Number: 20100019064564\nIFSC Code: BDBL0002480\nBranch: Akbarpur Branch`,
+            `INVOICE No : DS${dealCount}/2025-26\nBank Details For Payment\nBank Name: Bandhan Bank\nAccount Name: Car Swipe \nAccount Number: 20100019064564\nIFSC Code: BDBL0002480\nBranch: Akbarpur Branch`,
         ], // Row 2
         ['S.No', 'Description of Goods', 'REGISTRATION NO.', 'Payment Received', 'Final Deal Amount'], // Row 3
         ['1', `Vehicle Payment of — ${formData.carTitle}`, `${formData.carRegistrationNumber}`, `Rs. ${formData.totalAmountGotTillNowExcludingToken}`,  `Rs. ${formData.dealAmount-formData.anyFinalDiscountFromDealAmount}`], // Row 4
@@ -356,7 +356,7 @@ autoTable(doc, {
     },
 });
 
-doc.text(`For TRUST N RIDE`, pageWidth - 50, 272);
+doc.text(`For Car Swipe `, pageWidth - 50, 272);
 const imgWidth1 = 40; // A4 width in mm
    const imgHeight1 = 20;
    doc.addImage(
@@ -378,13 +378,13 @@ const imgWidth1 = 40; // A4 width in mm
    doc.setFontSize(9);
    doc.text(`Authorised Signatory`, pageWidth - 40, 300);
    doc.setFontSize(8);
-   doc.text(`Note: This is an electronically generated letter.The signature and stamp are digital\nand do not require a physical sign or stamp from a TRUST N RIDE representative.`, pageWidth - 115, 306);
+   doc.text(`Note: This is an electronically generated letter.The signature and stamp are digital\nand do not require a physical sign or stamp from a Car Swiperepresentative.`, pageWidth - 115, 306);
    doc.setFontSize(10);
    doc.text(` ACKNOWLEDGED & ACCEPTED`,4,276)
    doc.text(`Customer's Aadhaar e-Signature`, 6, 310);
    doc.setFontSize(10);
    doc.setTextColor(100, 149, 237); // Light blue color
-   doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://www.trustnride.in/ or email at team@trustnride.in.', 4, 314);
+   doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://www.carswipe.in/ or email at support@carswipe.in.', 4, 314);
    
    doc.addPage([210, 319]);
    
@@ -414,16 +414,16 @@ const imgWidth1 = 40; // A4 width in mm
       hour12: true, // Set to false for 24-hour format
     });
     doc.text('1. Non-Returnable After Delivery: Once the vehicle is delivered, it is understood that the Customer has thoroughly inspected it and accepted its condition. Therefore, the vehicle is considered sold and cannot be returned under any circumstances, except in the case of loan cancellation by the lending company.', 5, 82,{maxWidth:206});
-   doc.text(`2. Due Payment from Customer: If this payment is not cleared, the vehicle transfer or NOC process will not be initiated.Trust N Ride will make reasonable efforts to complete the vehicle transfer and NOC process within 90 working days from the date the process is officially initiated, provided the payment has been cleared.`,5, 101,{maxWidth:206})
-   doc.text(`3. Loan Cancellation: In the event of loan cancellation, Trust N Ride will make reasonable efforts to secure financing from an alternative lending institution. If alternative financing cannot be arranged, Trust N Ride reserves the right to retrieve the vehicle. A full refund will be issued to the Customer, provided the vehicle is returned in its original delivery condition, as determined by Trust N Ride.`,5, 120,{maxWidth:206})
-   doc.text(`4.  Liability Transfer:  I, ${formData.customerName}, acknowledge that, effective from ${indianDate} at ${indianTime}, I assume full responsibility for the purchased vehicle with Registration Number ${formData.carRegistrationNumber}. Trust N Ride will not be held accountable for any incidents, damages, accidents, theft, misuse, challans, or third-party liabilities, including fines or compensation arising from accidents, occurring after this date and time. ${formData.customerName} will bear all legal, financial, and operational responsibilities related to the said vehicle.`,5, 143,{maxWidth:206})
-   doc.text(`5. Pre-Liability: Any legal issues, incidents, or claims related to the vehicle with Registration Number ${formData.carRegistrationNumber} before ${indianDate} at ${indianTime} shall be handled and resolved by Trust N Ride. ${formData.customerName}, the new owner, shall not be held responsible for any liabilities arising before the specified date and time.`,5,172,{maxWidth:206})
+   doc.text(`2. Due Payment from Customer: If this payment is not cleared, the vehicle transfer or NOC process will not be initiated.Car Swipewill make reasonable efforts to complete the vehicle transfer and NOC process within 90 working days from the date the process is officially initiated, provided the payment has been cleared.`,5, 101,{maxWidth:206})
+   doc.text(`3. Loan Cancellation: In the event of loan cancellation, Car Swipewill make reasonable efforts to secure financing from an alternative lending institution. If alternative financing cannot be arranged, Car Swipereserves the right to retrieve the vehicle. A full refund will be issued to the Customer, provided the vehicle is returned in its original delivery condition, as determined by Car Swipe .`,5, 120,{maxWidth:206})
+   doc.text(`4.  Liability Transfer:  I, ${formData.customerName}, acknowledge that, effective from ${indianDate} at ${indianTime}, I assume full responsibility for the purchased vehicle with Registration Number ${formData.carRegistrationNumber}. Car Swipewill not be held accountable for any incidents, damages, accidents, theft, misuse, challans, or third-party liabilities, including fines or compensation arising from accidents, occurring after this date and time. ${formData.customerName} will bear all legal, financial, and operational responsibilities related to the said vehicle.`,5, 143,{maxWidth:206})
+   doc.text(`5. Pre-Liability: Any legal issues, incidents, or claims related to the vehicle with Registration Number ${formData.carRegistrationNumber} before ${indianDate} at ${indianTime} shall be handled and resolved by Car Swipe . ${formData.customerName}, the new owner, shall not be held responsible for any liabilities arising before the specified date and time.`,5,172,{maxWidth:206})
    doc.text(`6. Jurisdiction: Any disputes shall be subject to the jurisdiction of the courts located in Ambedkar Nagar district, Uttar Pradesh.`,5, 193,{maxWidth:206})
    
    doc.setFontSize(13);
    doc.text(`By Digitally signing below, the customer confirms reading, understanding, and agreeing to all Terms and Conditions,acknowledges the sale, and accepts all liabilities and responsibilities\nas outlined.`,5, 222,{maxWidth:206})
    doc.setFontSize(11);
-   doc.text(`For TRUST N RIDE`, pageWidth - 50, 272);
+   doc.text(`For Car Swipe `, pageWidth - 50, 272);
   
    doc.addImage(
        'https://res.cloudinary.com/dztz5ltuq/image/upload/v1734425018/WhatsApp_Image_2024-12-17_at_14.05.25_785b0425-removebg-preview_f8eoli.png',
@@ -444,13 +444,13 @@ const imgWidth1 = 40; // A4 width in mm
    doc.setFontSize(9);
    doc.text(`Authorised Signatory`, pageWidth - 40, 298);
    doc.setFontSize(8);
-   doc.text(`Note: This is an electronically generated letter.The signature and stamp are digital\nand do not require a physical sign or stamp from a TRUST N RIDE representative.`, pageWidth - 115, 303);
+   doc.text(`Note: This is an electronically generated letter.The signature and stamp are digital\nand do not require a physical sign or stamp from a Car Swiperepresentative.`, pageWidth - 115, 303);
    doc.setFontSize(10);
    doc.text(` ACKNOWLEDGED & ACCEPTED`,4,281)
    doc.text(`Customer's Aadhaar e-Signature`, 6, 310);
    doc.setFontSize(10);
    doc.setTextColor(100, 149, 237); // Light blue color
-   doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://www.trustnride.in/ or email at team@trustnride.in.', 4, 314);
+   doc.text('This is a system-generated Document, e-signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://www.carswipe.in/ or email at support@carswipe.in.', 4, 314);
    
    // Open PDF in a new tab
   // var blobUrl = doc.output('bloburl');
@@ -947,30 +947,24 @@ formData.holdFromCustomer = Number(formData.dealAmount)-Number(formData.anyFinal
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
         >
           {loading ? (
-          <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-50 z-50">
-            {/* Spinner and Text Container */}
-            <div className="flex flex-col items-center">
-              {/* Outer Circle with Gradient */}
-              <div className="relative w-28 h-28 mb-4">
-                <div className="absolute w-full h-full border-4 border-t-transparent border-b-transparent border-l-blue-500 border-r-blue-300 rounded-full animate-spin"></div>
+          <div className="flex flex-col items-center justify-center h-screen bg-white">
+  {/* Car Animation Container */}
+  <div className="relative w-28 h-28 flex items-center justify-center">
+    {/* Moving Car Icon */}
+    <img
+      src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
+      alt="Car Logo"
+      className="w-36 h-16 animate-carDrive"
+    />
+  </div>
 
-                {/* Inner Circle */}
-                <div className="absolute top-2 left-2 w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center">
-                  {/* Logo with Flip Animation */}
-                  <img
-                    src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1731448689/apple-touch-icon_jrhfll.png" // Replace with your car logo path
-                    alt="Car Logo"
-                    className="w-12 h-12 animate-flip"
-                  />
-                </div>
-              </div>
-
-              {/* Text Below the Spinner */}
-              <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
-                <strong>Deal FORM IS SUBMITTING.... PLEASE WAIT </strong>
-              </p>
-            </div>
-          </div>
+  {/* Text Section */}
+  <p className="mt-0 text-xl md:text-2xl font-bold text-gray-800 text-center">
+   Deal Form is submitting Please Wait ...
+   
+  </p>
+ 
+</div>
         ) : (
           'Submit Deal Form'
         )}

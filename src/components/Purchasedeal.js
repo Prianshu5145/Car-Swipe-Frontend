@@ -52,7 +52,7 @@ LoanpaymentStatus:'Not Applicable',
  const fetchPurchaseDealCount = async () => {
      try {
        // Send a GET request to the API endpoint
-       const response = await fetch('https://trustnride-backend.onrender.com/api/purchasedeal/PurchaseDeal/Count');
+       const response = await fetch('https://car-swipe-backend-production.up.railway.app/api/purchasedeal/PurchaseDeal/Count');
    
        // Check if the response status is OK (200)
        if (response.ok) {
@@ -113,7 +113,7 @@ const handleSubmit = async (e) => {
 
   // Submit form data to the backend
   const response = await axios.post(
-    'https://trustnride-backend.onrender.com/api/purchasedeal/submit-Purchase-Deal',
+    'https://car-swipe-backend-production.up.railway.app/api/purchasedeal/submit-Purchase-Deal',
     formDataToSend,
     {
       headers: {
@@ -143,7 +143,7 @@ const handleSubmit1 = async (e) => {
   setLoading(true);
 
   try {
-    const response = await fetch('https://trustnride-backend.onrender.com/api/purchasedeal/verify', {
+    const response = await fetch('https://car-swipe-backend-production.up.railway.app/api/purchasedeal/verify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ vehicleNumber: formData.carRegistrationNumber })
@@ -204,30 +204,24 @@ const handleSubmit1 = async (e) => {
         className="w-full p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
       >
         {loading ? (
-          <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-50 z-50">
-            {/* Spinner and Text Container */}
-            <div className="flex flex-col items-center">
-              {/* Outer Circle with Gradient */}
-              <div className="relative w-28 h-28 mb-4">
-                <div className="absolute w-full h-full border-4 border-t-transparent border-b-transparent border-l-blue-500 border-r-blue-300 rounded-full animate-spin"></div>
+          <div className="flex flex-col items-center justify-center h-screen bg-white">
+  {/* Car Animation Container */}
+  <div className="relative w-28 h-28 flex items-center justify-center">
+    {/* Moving Car Icon */}
+    <img
+      src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
+      alt="Car Logo"
+      className="w-36 h-16 animate-carDrive"
+    />
+  </div>
 
-                {/* Inner Circle */}
-                <div className="absolute top-2 left-2 w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center">
-                  {/* Logo with Flip Animation */}
-                  <img
-                    src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1731448689/apple-touch-icon_jrhfll.png" // Replace with your car logo path
-                    alt="Car Logo"
-                    className="w-12 h-12 animate-flip"
-                  />
-                </div>
-              </div>
-
-              {/* Text Below the Spinner */}
-              <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
-                <strong>TOKEN FORM IS SUBMITTING.... PLEASE WAIT </strong>
-              </p>
-            </div>
-          </div>
+  {/* Text Section */}
+  <p className="mt-0 text-xl md:text-2xl font-bold text-gray-800 text-center">
+  Getting the vehicles details Please Wait ...
+   
+  </p>
+ 
+</div>
         ) : (
           'Next'
         )}
@@ -530,7 +524,7 @@ const handleSubmit1 = async (e) => {
     className="w-full p-2 border border-gray-300 rounded mt-2"
   >
   <option value="Customer">Customer</option>
-    <option value="TRUST N RIDE">TRUST N RIDE</option>
+    <option value="Car Swipe">Car Swipe</option>
     <option value="Not Applicable">Not Applicable</option>
   </select>
 </div>
@@ -631,30 +625,24 @@ const handleSubmit1 = async (e) => {
         className="w-full p-3 mt-5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
       >
         {loading ? (
-          <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-50 z-50">
-            {/* Spinner and Text Container */}
-            <div className="flex flex-col items-center">
-              {/* Outer Circle with Gradient */}
-              <div className="relative w-28 h-28 mb-4">
-                <div className="absolute w-full h-full border-4 border-t-transparent border-b-transparent border-l-blue-500 border-r-blue-300 rounded-full animate-spin"></div>
+          <div className="flex flex-col items-center justify-center h-screen bg-white">
+  {/* Car Animation Container */}
+  <div className="relative w-28 h-28 flex items-center justify-center">
+    {/* Moving Car Icon */}
+    <img
+      src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
+      alt="Car Logo"
+      className="w-36 h-16 animate-carDrive"
+    />
+  </div>
 
-                {/* Inner Circle */}
-                <div className="absolute top-2 left-2 w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center">
-                  {/* Logo with Flip Animation */}
-                  <img
-                    src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1731448689/apple-touch-icon_jrhfll.png" // Replace with your car logo path
-                    alt="Car Logo"
-                    className="w-12 h-12 animate-flip"
-                  />
-                </div>
-              </div>
-
-              {/* Text Below the Spinner */}
-              <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
-                <strong>PURCHASE DEAL FORM IS SUBMITTING.... PLEASE WAIT </strong>
-              </p>
-            </div>
-          </div>
+  {/* Text Section */}
+  <p className="mt-0 text-xl md:text-2xl font-bold text-gray-800 text-center">
+   Purchase Deal Form is submitting Please Wait ...
+   
+  </p>
+ 
+</div>
         ) : (
           'Submit Purchase Deal Form'
         )}

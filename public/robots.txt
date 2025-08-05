@@ -1,3 +1,33 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /login
+Disallow: /signup
+Disallow: /logout
+Disallow: /create-listing
+Disallow: /all-listings
+Disallow: /listing/
+Disallow: /About
+Disallow: /uploadReview
+Disallow: /Make a Deal
+Disallow: /reset-password/
+Disallow: /forgot-Password
+Disallow: /Contact
+Disallow: /rtoNoc
+Disallow: /rtotransferwithloan
+Disallow: /rtotransferwithoutloan
+Disallow: /rtodoc
+Disallow: /viewnoc
+Disallow: /Selltoken
+Disallow: /SellDeal
+Disallow: /purchasetoken
+Disallow: /purchaseDeal
+Disallow: /dummytoken
+Disallow: /privacy-policy
+Disallow: /T&C
+Disallow: /Deal-summary
+Disallow: /letter-head
+Disallow: /Car-Loan
+
+Allow: /
+Allow: /sell
+Allow: /buy
+Allow: /ExchangeCar

@@ -29,7 +29,9 @@ import PurchaseDealForm from './components/Purchasedeal';
 import DummyToken from './components/dummytoken';
 import PrivacyPolicy from './components/PrivacyPolicy'
 import TermsAndConditions from './components/Term&Condition'
-import DealSummaryTable from './components/DealSummary'
+import DealSummaryTable from './components/DealSummary';
+import VehicleReceiptGenerator from './utils/letterhead';
+import CarLoanPage from './components/carLoan';
 function App() {
   
   const location = useLocation();  // Get the current location
@@ -52,7 +54,7 @@ function App() {
         <Route path="/buy" element={<ViewAllListings/>} />
         <Route path="/About" element={<About/>} />
         <Route path="/uploadReview" element={<ReviewGallery/>} />
-        <Route path="/Gallery" element={<ReviewSection/>} />
+        {/* <Route path="/Gallery" element={<ReviewSection/>} /> */}
         
         <Route path="/Make a Deal" element={<ContactUs/>} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
@@ -75,6 +77,8 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
         <Route path="/T&C" element={<TermsAndConditions/>} />
        <Route path="/Deal-summary" element={<DealSummaryTable/>} />
+        <Route path="/letter-head" element={<VehicleReceiptGenerator/>} />
+        <Route path="/Car-Loan" element={<CarLoanPage/>} />
       </Routes>
       
       

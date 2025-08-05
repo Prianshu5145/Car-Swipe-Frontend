@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const MotivationSection = () => {
     const cards = [
         {
-            image: "/images/coding.jpg",
-            description: "Book Your Appointment and Get Best the Price.",
+            image: "https://res.cloudinary.com/dztz5ltuq/image/upload/v1750185682/middle-aged-hispanic-business-person_1_bzij3h.jpg",
+            description: "Schedule Your Appointment at Your Location.",
         },
         {
             image: "/images/General-Car-Problem-and-How-to-Diagnose-Them-Easily.jpg",

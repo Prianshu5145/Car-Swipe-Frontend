@@ -17,18 +17,18 @@ const ViewAllListings = () => {
 
   // Dynamic text loading
   const phrases = [
-    "Welcome to Trust N Ride!",
-    "TICK TOCK SOLD!!",
-    "View your favorite car!",
-    "Ride with confidence!",
-    "Find your dream car!"
+    "Glad to have you at Car Swipe!",
+    "Gone in a flash!",
+    "Explore your top pick!",
+    "Hit the road with trust!",
+    "Discover the car made for you!"
   ];
   const [currentPhrase, setCurrentPhrase] = useState(phrases[0]);
 
   const fetchListings = async () => {
     try {
       const response = await axios.get(
-        'https://trustnride-backend.onrender.com/api/listings/alllisting'
+        'https://car-swipe-backend-production.up.railway.app/api/listings/alllisting'
       );
       setListings(response.data);
     } catch (error) {
@@ -79,29 +79,24 @@ const ViewAllListings = () => {
         {/* Spinner */}
         {isLoading ? (
           <div className="flex flex-col items-center justify-center h-screen bg-white">
-  {/* Spinner Container */}
-  <div className="relative w-28 h-28">
-    {/* Outer Circle with Gradient */}
-    <div className="absolute w-full h-full border-4 border-t-transparent border-b-transparent border-l-blue-500 border-r-blue-300 rounded-full animate-spin"></div>
-    
-    {/* Inner Circle */}
-    <div className="absolute top-2 left-2 w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center">
-      {/* Logo with Flip Animation */}
-      <img
-        src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1731448689/apple-touch-icon_jrhfll.png" // Replace with your car logo path
-        alt="Car Logo"
-        className="w-12 h-12 animate-flip"
-      />
-    </div>
+  {/* Car Animation Container */}
+  <div className="relative w-28 h-28 flex items-center justify-center">
+    {/* Moving Car Icon */}
+    <img
+      src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
+      alt="Car Logo"
+      className="w-36 h-16 animate-carDrive"
+    />
   </div>
 
   {/* Text Section */}
-  <p className="mt-6 text-sm lg:text-md font-semibold text-gray-500">
-  <p className="mt-8 text-xl md:text-2xl font-bold text-gray-800 text-center">
-    We’re preparing for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">your dream ride....</span>
+  <p className="mt-0 text-xl md:text-2xl font-bold text-gray-800 text-center">
+   Getting your dream {' '}
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+     ride ready...
+    </span>
   </p>
-  Your journey, our commitment —  <span className="text-blue-400">TRUST N RIDE</span>
-  </p>
+ 
 </div>
 
         ) : (

@@ -12,7 +12,7 @@ const [isLoading, setIsLoading] = useState(true);
     const headings = [
         "Happy Customers from Across the State",
         "We create smiles, one ride at a time.",
-        "Trust N Ride: Where happiness meets trust.",
+        "Car Swipe: Where happiness meets trust.",
         "Trusted by Thousands for Buying and Selling",
         "Customer Joy is Our Greatest Achievement",
         "A Journey of Trust, Miles of Smiles",
@@ -21,7 +21,7 @@ const [isLoading, setIsLoading] = useState(true);
 
     const fetchReviews = async () => {
         try {
-            const response = await axios.get('https://trustnride-backend.onrender.com/api/reviews');
+            const response = await axios.get('https://car-swipe-backend-production.up.railway.app/api/reviews');
             setReviews(response.data);
         } catch (error) {
             console.error('Error fetching reviews:', error);
@@ -112,7 +112,7 @@ const [isLoading, setIsLoading] = useState(true);
   <p className="mt-8 text-xl md:text-2xl font-bold text-gray-800 text-center">
     We’re preparing for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">your dream ride....</span>
   </p>
-  Your journey, our commitment —  <span className="text-blue-400">TRUST N RIDE</span>
+  Your journey, our commitment —  <span className="text-blue-400">Car Swipe</span>
   </p>
 </div>): (reviewChunks.map((chunk, index) => (
                         <div key={index}>

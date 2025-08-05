@@ -84,7 +84,7 @@ const SellTokenForm = () => {
   const fetchTokenCount = async () => {
     try {
       // Send a GET request to the API endpoint
-      const response = await fetch('https://trustnride-backend.onrender.com/api/token/tokens/count');
+      const response = await fetch('https://car-swipe-backend-production.up.railway.app/api/token/tokens/count');
   
       // Check if the response status is OK (200)
       if (response.ok) {
@@ -177,7 +177,7 @@ const SellTokenForm = () => {
         ['INVOICE FOR TOKEN PAYMENT'], // Row 1
         [
             `Customer Name:\n ${formData.customerName}\nCustomer Address: ${formData.customerAddress} \nMobile No: ${formData.whatsappMobile}`,
-            `INVOICE No : TS${tokenCount}/2025-26\nBank Details For Payment\nBank Name: Bandhan Bank\nAccount Name: TRUST N RIDE\nAccount Number: 20100019064564\nIFSC Code: BDBL0002480\nBranch: Akbarpur Branch`,
+            `INVOICE No : TS${tokenCount}/2025-26\nBank Details For Payment\nBank Name: Bandhan Bank\nAccount Name: Car SwipeAccount Number: 20100019064564\nIFSC Code: BDBL0002480\nBranch: Akbarpur Branch`,
         ], // Row 2
         ['S.No', 'Description of Goods', 'REGISTRATION NO.', 'Token Amount', 'Deal Amount'], // Row 3
         ['1', `Vehicle Token Payment of - ${formData.carTitle}`, `${formData.carRegistrationNumber}`, `Rs. ${formData.tokenAmount}`,  `Rs. ${formData.dealDoneAmount}`], // Row 4
@@ -228,7 +228,7 @@ const SellTokenForm = () => {
     drawRow(tableData[3], [20, 61, 29, 29, 29], rowHeights[3]); // Row 4: 5 columns
     drawRow(tableData[4], colWidths, rowHeights[4]); // Row 5: 2 columns
 
-    doc.text(`For TRUST N RIDE`, pageWidth - 50, 207);
+    doc.text(`For Car Swipe` ,  pageWidth - 50, 207);
     doc.text(`Place of Supply: Uttar Pradesh`, 8, 210);
 
     const imgWidth1 = 40; // A4 width in mm
@@ -261,12 +261,12 @@ const SellTokenForm = () => {
     doc.text('1. Non-Refundable: By providing the token, the buyer agrees to purchase the vehicle,and the token is partially refundable,\n     with deductions applied as per the cancellation point stated below, under any circumstances.', 5, 250);
     doc.text('2. Validity: The token is valid for 15 days from this invoice date or In case of a loan, it is valid up to 7 days from the date\n    You got final loan approval from loan Company.', 5, 259);
     doc.text('3. Adjustment: The token will be adjusted against the final payment.', 5, 269);
-    doc.text('4. Cancellation: \n\n i. If Deal is canceled by the buyer (for a valid token): Rs.10,000 will be deducted from the token amount,and the remaining\n    will be refunded. If the token amount is less than Rs.10,000, the entire token will be forfeited.\n\n ii. If Deal is canceled by the buyer (for a invalid token): Rs.20,000 will be deducted from the token amount, and the\n     remaining will be refunded. If the token amount is less than Rs.20,000, the entire token will be forfeited.\n\niii. If the Deal is canceled by the TRUST N RIDE: The full token amount will be refunded. ', 5, 275);
+    doc.text('4. Cancellation: \n\n i. If Deal is canceled by the buyer (for a valid token): Rs.10,000 will be deducted from the token amount,and the remaining\n    will be refunded. If the token amount is less than Rs.10,000, the entire token will be forfeited.\n\n ii. If Deal is canceled by the buyer (for a invalid token): Rs.20,000 will be deducted from the token amount, and the\n     remaining will be refunded. If the token amount is less than Rs.20,000, the entire token will be forfeited.\n\niii. If the Deal is canceled by the Car SwipeThe full token amount will be refunded. ', 5, 275);
     doc.text('5. Jurisdiction: Any disputes shall be subject to the jurisdiction of the courts located in Ambedkar Nagar district, Uttar Pradesh.', 5, 314);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.setTextColor(100, 149, 237);
-    doc.text('This is a system-generated invoice, e signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://www.trustnride.in/ or email at team@trustnride.in.', 3, 346);
+    doc.text('This is a system-generated invoice, e signed and approved for authenticity. For any inquiries or support, you can reach us via\nour website at https://www.carswipe.in/ or email at support@carswipe.in.', 3, 346);
 
     // Open PDF in a new tab
    //var blobUrl = doc.output('bloburl');
@@ -304,7 +304,7 @@ const handleSubmit = async (e) => {
 
     // Submit form data to the backend
     const response = await axios.post(
-      'https://trustnride-backend.onrender.com/api/token/submit-token',
+      'https://car-swipe-backend-production.up.railway.app/api/token/submit-token',
       formDataToSend,
       {
         headers: {
@@ -635,30 +635,24 @@ className="border rounded px-2 py-1"
                 className="bg-green-600 text-white w-full py-2 rounded-lg hover:bg-green-700 transition"
               >
               {loading ? (
-                <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-50 z-50">
-                  {/* Spinner and Text Container */}
-                  <div className="flex flex-col items-center">
-                    {/* Outer Circle with Gradient */}
-                    <div className="relative w-28 h-28 mb-4">
-                      <div className="absolute w-full h-full border-4 border-t-transparent border-b-transparent border-l-blue-500 border-r-blue-300 rounded-full animate-spin"></div>
-      
-                      {/* Inner Circle */}
-                      <div className="absolute top-2 left-2 w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center">
-                        {/* Logo with Flip Animation */}
-                        <img
-                          src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1731448689/apple-touch-icon_jrhfll.png" // Replace with your car logo path
-                          alt="Car Logo"
-                          className="w-12 h-12 animate-flip"
-                        />
-                      </div>
-                    </div>
-      
-                    {/* Text Below the Spinner */}
-                    <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
-                      <strong>PURCHASE DEAL FORM IS SUBMITTING.... PLEASE WAIT </strong>
-                    </p>
-                  </div>
-                </div>
+                <div className="flex flex-col items-center justify-center h-screen bg-white">
+  {/* Car Animation Container */}
+  <div className="relative w-28 h-28 flex items-center justify-center">
+    {/* Moving Car Icon */}
+    <img
+      src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
+      alt="Car Logo"
+      className="w-36 h-16 animate-carDrive"
+    />
+  </div>
+
+  {/* Text Section */}
+  <p className="mt-0 text-xl md:text-2xl font-bold text-gray-800 text-center">
+   Token Form is submitting Please Wait ...
+   
+  </p>
+ 
+</div>
               ) : (
                 'Submit Token Form'
               )}

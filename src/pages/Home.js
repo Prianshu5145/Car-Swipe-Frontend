@@ -7,6 +7,7 @@ import LiveAuction from '../components/Auction';
 import MotivationSection from '../components/sellcarposter';
 import ReviewSection from '../components/Review';
 import Footer from '../components/footer'
+import CarActionCard from '../components/buttoncard'
 const Home = () => {
   return (
     <div>
@@ -14,7 +15,8 @@ const Home = () => {
 
       {/* Image Slider below N/avbar */}
       <ImageSlider />
-      <ButtonGrid/>
+      <CarActionCard/>
+      {/* <ButtonGrid/> */}
       <Listings/>
       
       <MotivationSection/>

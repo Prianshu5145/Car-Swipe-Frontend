@@ -21,7 +21,7 @@ const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const fetchpurchaseTokenCount = async () => {
     try {
       // Send a GET request to the API endpoint
-      const response = await fetch('https://trustnride-backend.onrender.com/api/purchasetoken/count');
+      const response = await fetch('https://car-swipe-backend-production.up.railway.app/api/purchasetoken/count');
   
       // Check if the response status is OK (200)
       if (response.ok) {
@@ -76,7 +76,7 @@ const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
     // Submit form data to the backend
     const response = await axios.post(
-      'https://trustnride-backend.onrender.com/api/purchasetoken/create',
+      'https://car-swipe-backend-production.up.railway.app/api/purchasetoken/create',
       formDataToSend,
       {
         headers: {
@@ -205,7 +205,7 @@ const [submissionSuccess, setSubmissionSuccess] = useState(false);
           ['INVOICE FOR TOKEN PAYMENT'], // Row 1
           [
               `Customer Name:\n ${ownerName}\nCustomer Address: ${address} \nMobile No: ${ownerWhatsApp}`,
-              `INVOICE No : TP${purchasetokenCount}/2025-26\nBank Details For Payment\nBank Name: Bandhan Bank\nAccount Name: TRUST N RIDE\nAccount Number: 20100019064564\nIFSC Code: BDBL0002480\nBranch: Akbarpur Branch`,
+              `INVOICE No : TP${purchasetokenCount}/2025-26\nBank Details For Payment\nBank Name: Bandhan Bank\nAccount Name: Car SwipeAccount Number: 20100019064564\nIFSC Code: BDBL0002480\nBranch: Akbarpur Branch`,
           ], // Row 2
           ['S.No', 'Description of Goods', 'REG NO', 'Token Amount', 'Tentative Deal Amount'], // Row 3
           ['1', `Car Token Payment-${carTitle}`, `${carRegistrationNumber}`, `Rs. ${tokenAmount}`,  `Rs. ${approxDealAmount}`], // Row 4
@@ -288,14 +288,14 @@ const [submissionSuccess, setSubmissionSuccess] = useState(false);
       doc.setFontSize(10);
       doc.text('1. Binding Deal: Once the token is taken, the deal is locked. The tentative deal amount becomes final, assuming the car\n     condition remains as agreed.', 5, 250);
       doc.text('2. Car Condition: The final deal amount is valid if the car condition matches the initial agreement. Any discrepancies may\n    result in a slight change in the deal amount or cancellation of the deal.', 5, 259);
-      doc.text('3. Cancellation by Customer: If you sell your car to another party outside of Trust N Ride after taking the token, you must\n    return the token amount. Failure to do so will lead to legal action.', 5, 269);
-      doc.text('4.Cancellation by Trust N Ride: If Trust N Ride cancels the deal, the token will be forfeited.', 5, 278);
-      doc.text('5.Legal Consequences: Any violation, including selling the car outside of Trust N Ride or failing to return the token, will \n   lead to legal action.', 5, 283);
+      doc.text('3. Cancellation by Customer: If you sell your car to another party outside of Car Swipefter taking the token, you must\n    return the token amount. Failure to do so will lead to legal action.', 5, 269);
+      doc.text('4.Cancellation by Car SwipeIf CaCar Swipe[cels the deal, the token will be forfeited.', 5, 278);
+      doc.text('5.Legal Consequences: Any violation, including selling the car outside of Car Swiper failing to return the token, will \n   lead to legal action.', 5, 283);
 
       doc.text('5. Jurisdiction: Any disputes shall be subject to the jurisdiction of the courts located in Ambedkar Nagar district, Uttar Pradesh.', 5, 292);
       doc.setFont("helvetica", "normal");
       doc.setFontSize(10);
-      doc.text('This is a system-generated invoice, Digitally signed and approved for authenticity. For any inquiries or support, you can reach us via\n our website at https://www.trustnride.in/ or email at team@trustnride.in.', 3, 309);
+      doc.text('This is a system-generated invoice, Digitally signed and approved for authenticity. For any inquiries or support, you can reach us via\n our website at https://www.carswipe.in/ or email at support@carswipe.in.', 3, 309);
   
       // Open PDF in a new tab
       //var blobUrl = doc.output('bloburl');
@@ -423,30 +423,24 @@ const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
       <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
       {loading ? (
-          <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-50 z-50">
-            {/* Spinner and Text Container */}
-            <div className="flex flex-col items-center">
-              {/* Outer Circle with Gradient */}
-              <div className="relative w-28 h-28 mb-4">
-                <div className="absolute w-full h-full border-4 border-t-transparent border-b-transparent border-l-blue-500 border-r-blue-300 rounded-full animate-spin"></div>
+          <div className="flex flex-col items-center justify-center h-screen bg-white">
+  {/* Car Animation Container */}
+  <div className="relative w-28 h-28 flex items-center justify-center">
+    {/* Moving Car Icon */}
+    <img
+      src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
+      alt="Car Logo"
+      className="w-36 h-16 animate-carDrive"
+    />
+  </div>
 
-                {/* Inner Circle */}
-                <div className="absolute top-2 left-2 w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center">
-                  {/* Logo with Flip Animation */}
-                  <img
-                    src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1731448689/apple-touch-icon_jrhfll.png" // Replace with your car logo path
-                    alt="Car Logo"
-                    className="w-12 h-12 animate-flip"
-                  />
-                </div>
-              </div>
-
-              {/* Text Below the Spinner */}
-              <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
-                <strong>TOKEN FORM IS SUBMITTING.... PLEASE WAIT </strong>
-              </p>
-            </div>
-          </div>
+  {/* Text Section */}
+  <p className="mt-0 text-xl md:text-2xl font-bold text-gray-800 text-center">
+   Purchase Token Form is submitting Please Wait ...
+   
+  </p>
+ 
+</div>
         ) : (
           'Submit Token Form'
         )}
