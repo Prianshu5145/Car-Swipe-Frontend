@@ -96,7 +96,7 @@ const ExchangeCar = () => {
           <h2 className="text-2xl font-bold mb-4 text-blue-700 text-center">Need Help with Car Exchange?</h2>
           <p className="text-gray-700 mb-2 text-center">We're here to help! Reach out to us at:</p>
           <p className="text-center text-gray-800 font-medium">📧 contact@carswipe.in</p>
-          <p className="text-center text-gray-800 font-medium">📞 +91 97929 83625</p>
+          <p className="text-center text-gray-800 font-medium">📞 +91 9119913441</p>
         </section>
       </div>
       <Footer />

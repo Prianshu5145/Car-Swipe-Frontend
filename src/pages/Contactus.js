@@ -133,7 +133,7 @@ const ContactUs = () => {
                 <FaPhoneAlt className="text-blue-500 mr-3 text-xl" />
                 <span>
                   Phone:{' '}
-                  <a href="tel:+919792983625" className="text-blue-600 hover:underline">
+                  <a href="tel:+919119913441" className="text-blue-600 hover:underline">
                     +919119913441
                   </a>
                 </span>

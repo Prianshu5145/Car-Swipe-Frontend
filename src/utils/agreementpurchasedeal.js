@@ -951,7 +951,7 @@ doc.text('This is a system-generated Document, e-signed and approved for authent
 //  var blobUrl = doc.output('bloburl');
   
 // window.open(blobUrl, '_blank');
-   doc.save();
+   doc.save('Payment_Details_Agreement');
  const pdfBlob = doc.output("blob");
 return new File([pdfBlob], "PaymentDetails_Agreement.pdf", { type: "application/pdf" });
 };
