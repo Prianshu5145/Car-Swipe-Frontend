@@ -41,7 +41,7 @@ const Footer = () => {
                     <div className="w-full sm:w-1/2 flex-1">
                         <h3 className="text-xl font-semibold mb-3">Registered Office Address:</h3>
                         <p className="text-white">
-                            Car Swipe Services Pvt Ltd, Taukalpur Nagra, Surapur, kadipur, Sultanpur,Uttar Pradesh, 228161
+                            Car Swipe Services Pvt Ltd, Taukalpur Nagra, Surapur, kadipur, Sultanpur, Uttar Pradesh, 228161
                         </p>
                         <p className="mt-2 text-white">
                             CIN : <span className="font-semibold">U45102UP2025PTC225693</span> {/* Example GSTIN */}
