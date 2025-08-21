@@ -28,7 +28,7 @@ const [submissionSuccess, setSubmissionSuccess] = useState(false);
         const data = await response.json(); // Parse the JSON response
         const purchasetokenCount = data.count; 
         // Extract the 'count' field from the response
-        setpurchaseTokenCount(purchasetokenCount-3);
+        setpurchaseTokenCount(purchasetokenCount+1);
         console.log('Token count:', purchasetokenCount); // Log the token count (or do something with it)
         
         // You can use the tokenCount in your UI as needed, for example:
@@ -155,7 +155,7 @@ const [submissionSuccess, setSubmissionSuccess] = useState(false);
       const imgWidth = 210; // A4 width in mm
       const imgHeight = 50;
       doc.addImage(
-          'https://res.cloudinary.com/dztz5ltuq/image/upload/v1741759136/PdfImage_dsk0mx.png',
+          'https://res.cloudinary.com/dztz5ltuq/image/upload/v1754423233/QZim6kCLMB3XSpZ7-5371732941973365_1_15__cropped_page-0001_e4t9ee.jpg',
           'PNG',
           0,
           0,
@@ -205,7 +205,7 @@ const [submissionSuccess, setSubmissionSuccess] = useState(false);
           ['INVOICE FOR TOKEN PAYMENT'], // Row 1
           [
               `Customer Name:\n ${ownerName}\nCustomer Address: ${address} \nMobile No: ${ownerWhatsApp}`,
-              `INVOICE No : TP${purchasetokenCount}/2025-26\nBank Details For Payment\nBank Name: Bandhan Bank\nAccount Name: Car SwipeAccount Number: 20100019064564\nIFSC Code: BDBL0002480\nBranch: Akbarpur Branch`,
+              `INVOICE No : TP${purchasetokenCount}/2025-26\nBank Details For Payment\nBank Name: Bandhan Bank \nAccount Number: 20100019064564\nIFSC Code: BDBL0002480\nBranch: Akbarpur Branch`,
           ], // Row 2
           ['S.No', 'Description of Goods', 'REG NO', 'Token Amount', 'Tentative Deal Amount'], // Row 3
           ['1', `Car Token Payment-${carTitle}`, `${carRegistrationNumber}`, `Rs. ${tokenAmount}`,  `Rs. ${approxDealAmount}`], // Row 4
@@ -256,29 +256,12 @@ const [submissionSuccess, setSubmissionSuccess] = useState(false);
       drawRow(tableData[3], [20, 61, 29, 29, 29], rowHeights[3]); // Row 4: 5 columns
       drawRow(tableData[4], colWidths, rowHeights[4]); // Row 5: 2 columns
   
-      doc.text(`For TRUSTNRIDE`, pageWidth - 50, 207);
+    
       doc.text(`Place of Supply: Uttar Pradesh`, 8, 210);
   
-      const imgWidth1 = 40; // A4 width in mm
-      const imgHeight1 = 20;
-      doc.addImage(
-          'https://res.cloudinary.com/dztz5ltuq/image/upload/v1734425018/WhatsApp_Image_2024-12-17_at_14.05.25_785b0425-removebg-preview_f8eoli.png',
-          'PNG',
-          pageWidth - 40,
-          210,
-          imgWidth1,
-          imgHeight1
-      );
-      doc.addImage(
-          'https://res.cloudinary.com/dztz5ltuq/image/upload/v1734425018/WhatsApp_Image_2024-12-17_at_14.05.25_fded720a-removebg-preview_gnew8h.png',
-          'PNG',
-          pageWidth - 80,
-          210,
-          imgWidth1,
-          imgHeight1
-      );
+      
   
-      doc.text(`Proprietor`, pageWidth - 40, 235);
+      
       doc.line(0, 238, pageWidth, 238);
       doc.setFont("helvetica", "bold"); // Use "bold" for a darker heading
       doc.setFontSize(15); // Adjust the size for a heading style
@@ -288,23 +271,23 @@ const [submissionSuccess, setSubmissionSuccess] = useState(false);
       doc.setFontSize(10);
       doc.text('1. Binding Deal: Once the token is taken, the deal is locked. The tentative deal amount becomes final, assuming the car\n     condition remains as agreed.', 5, 250);
       doc.text('2. Car Condition: The final deal amount is valid if the car condition matches the initial agreement. Any discrepancies may\n    result in a slight change in the deal amount or cancellation of the deal.', 5, 259);
-      doc.text('3. Cancellation by Customer: If you sell your car to another party outside of Car Swipefter taking the token, you must\n    return the token amount. Failure to do so will lead to legal action.', 5, 269);
-      doc.text('4.Cancellation by Car SwipeIf CaCar Swipe[cels the deal, the token will be forfeited.', 5, 278);
-      doc.text('5.Legal Consequences: Any violation, including selling the car outside of Car Swiper failing to return the token, will \n   lead to legal action.', 5, 283);
+      doc.text('3. Cancellation by Customer: If you sell your car to another party outside of Car Swipe after taking the token, you must\n    return the token amount. Failure to do so will lead to legal action.', 5, 269);
+      doc.text('4.Cancellation by Car Swipe : If Car Swipe cancels the deal, the token will be forfeited.', 5, 278);
+      doc.text('5.Legal Consequences: Any violation, including selling the car outside of Car Swipe or failing to return the token, will \n   lead to legal action.', 5, 283);
 
-      doc.text('5. Jurisdiction: Any disputes shall be subject to the jurisdiction of the courts located in Ambedkar Nagar district, Uttar Pradesh.', 5, 292);
+      doc.text('5. Jurisdiction: Any disputes shall be subject to the jurisdiction of the courts located in Sultanpur district, Uttar Pradesh.', 5, 292);
       doc.setFont("helvetica", "normal");
       doc.setFontSize(10);
       doc.text('This is a system-generated invoice, Digitally signed and approved for authenticity. For any inquiries or support, you can reach us via\n our website at https://www.carswipe.in/ or email at support@carswipe.in.', 3, 309);
   
       // Open PDF in a new tab
-      //var blobUrl = doc.output('bloburl');
+    //   var blobUrl = doc.output('bloburl');
     
        
-    // window.open(blobUrl, '_blank');
-     //doc.save();
-     const pdfBlob = doc.output("blob");
-     return new File([pdfBlob], "token_invoice.pdf", { type: "application/pdf" });
+    //  window.open(blobUrl, '_blank');
+    doc.save("token_invoice.pdf");
+    // const pdfBlob = doc.output("blob");
+     //return new File([pdfBlob], "token_invoice.pdf", { type: "application/pdf" });
   };
 
   return (
@@ -422,26 +405,26 @@ const [submissionSuccess, setSubmissionSuccess] = useState(false);
       </div>
 
       <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
-      {loading ? (
-          <div className="flex flex-col items-center justify-center h-screen bg-white">
-  {/* Car Animation Container */}
-  <div className="relative w-28 h-28 flex items-center justify-center">
-    {/* Moving Car Icon */}
-    <img
-      src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
-      alt="Car Logo"
-      className="w-36 h-16 animate-carDrive"
-    />
-  </div>
+      {loading ?  (
+         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white">
+    {/* Car Animation */}
+    <div className="w-28 h-16 flex items-center justify-center mb-4">
+      <img
+        src="https://res.cloudinary.com/dztz5ltuq/image/upload/v1754381777/Screenshot__620_-removebg-preview_20250805_134123_0000_2_gbdz3h.png"
+        alt="Car Logo"
+        className="w-36 h-16 animate-carDrive"
+      />
+    </div>
 
-  {/* Text Section */}
-  <p className="mt-0 text-xl md:text-2xl font-bold text-gray-800 text-center">
-   Purchase Token Form is submitting Please Wait ...
-   
-  </p>
- 
-</div>
-        ) : (
+    {/* Loading Text */}
+    <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
+      Purchase Deal Form{' '}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+        is Submitting......
+      </span>
+    </p>
+  </div>
+        )  : (
           'Submit Token Form'
         )}
       </button>
